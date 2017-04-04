@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="banner"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="banner">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <imagePath
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        allowUpload="false"
+                        autoUploadDelay="1"
+                        ddGroups="[media]"
+                        fieldLabel="Image Path"
+                        fileNameParameter="./imageName"
+                        fileReferenceParameter="./fileReference"
+                        height="250"
+                        mimeTypes="*.jpg;*.jpeg;*.gif;*.png"
+                        mimeTypesDescription="Images"
+                        name="fileReference"
+                        sizeLimit="100"
+                        title="Image"
+                        xtype="html5smartimage"/>
+                   
+                    <headLine
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Head Line"
+                        maxLength="{Long}100"
+                        name="./headLine"
+                        xtype="textfield"/>
+                                      
+                    <summaryText
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Summary Text"
+                        name="./summaryText"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="[\0]"/>
+                        </rtePlugins>
+                    </summaryText>
+                     <linkText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldLabel="Link Text"
+                        name="./linkText"/>
+                    <linkType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        class="cq-dialog-dropdown-showhide"
+                        cq-dialog-dropdown-showhide-target=".link-type-hide-show"
+                        fieldLabel="Link Type"
+                        name="./linkType"
+                        value="internal">
+                        <items jcr:primaryType="nt:unstructured">
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                text="Internal"
+                                value="internal"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                text="External"
+                                value="external"/>
+                        </items>
+                    </linkType>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
