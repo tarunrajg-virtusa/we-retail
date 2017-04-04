@@ -1,0 +1,7 @@
+<div data-sly-use.banner="Banner" data-sly-unwrap>
+    <div style="background-image: url(${banner.imageUrl});background-position: left top;background-repeat: no-repeat; padding: 100px;">
+        <h3>${banner.headline}</h3>
+        <p style="display:block;">${banner.body}</p>
+        <button type="button" data-sly-test="${banner.linkLabel}">${banner.linkLabel}</button>
+    </div>
+</div>
