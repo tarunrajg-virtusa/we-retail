@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Dialog"
+          height="640"
+          width="640"
+          title="Media Video"
+          xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                    jcr:primaryType="cq:Panel"
+                    title="Styling">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <backgroundColor
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Background Color Code:"
+                            fieldDescription="Hex code. For example, Beige color is #f5f5dc"
+                            defaultValue="#aaaaaa"
+                            name="./backgroundColor"
+                            xtype="textfield"/>
+                    <contentAlignClass
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="Select a Style"
+                            fieldLabel="Text Justification:"
+                            name="./contentAlignClass"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <one
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Left"
+                                    value="component--align-left"/>
+                            <two
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Right"
+                                    value="component--align-right"/>
+                            <three
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Center"
+                                    value="component--align-center"/>
+                        </options>
+                    </contentAlignClass>
+                    <colorTheme
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="Select a Color"
+                            fieldLabel="Text Color:"
+                            name="./colorTheme"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <one
+                                    jcr:primaryType="nt:unstructured"
+                                    text="White"
+                                    value="light"/>
+                            <two
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Black"
+                                    value="dark"/>
+                        </options>
+                    </colorTheme>
+                    <mediaPosition
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Video Position:"
+                            name="./mediaPosition"
+                            defaultValue="Select a Position"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <one
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Left"
+                                    value="media--left"/>
+                            <two
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Right"
+                                    value="media--right"/>
+                        </options>
+                    </mediaPosition>
+                    <backgroundImage
+                            jcr:primaryType="cq:Widget"
+                            allowUpload="{Boolean}false"
+                            ddGroups="[media]"
+                            fieldLabel="Background Image:"
+                            fileNameParameter="./backgroundImagefileName"
+                            fileReferenceParameter="./backgroundImage"
+                            mimeTypes="*.jpg;*.png"
+                            name="./backgroundImagename"
+                            uploadUrl="/tmp/upload/*"
+                            xtype="smartfile"/>
+                </items>
+            </tab1>
+            <tab2
+                    jcr:primaryType="cq:Panel"
+                    title="Content">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <videoID
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Youtube Video ID:"
+                            defaultValue="uQKnTcNXcDo"
+                            name="./videoID"
+                            xtype="textfield"/>
+                    <videoTitle
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Video Title:"
+                            name="./videoTitle"
+                            xtype="textfield"/>
+                    <brandingImageOne
+                            jcr:primaryType="cq:Widget"
+                            allowUpload="{Boolean}false"
+                            ddGroups="[media]"
+                            fieldLabel="Brand Logo:"
+                            fileNameParameter="./brandingImageOnefileName"
+                            fileReferenceParameter="./brandingImageOne"
+                            mimeTypes="*.jpg;*.png"
+                            name="./brandingImageOnename"
+                            uploadUrl="/tmp/upload/*"
+                            xtype="smartfile"/>
+                    <brandingImageOneAlt
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Brand Logo ALT Text:"
+                            name="./brandingImageOneAlt"
+                            xtype="textfield"/>
+                    <headline
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Headline:"
+                            name="./headline"
+                            xtype="textfield"/>
+                    <body
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Body:"
+                            name="./body"
+                            xtype="textarea"/>
+                    <buttonTextOne
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Button #1 Label:"
+                            name="./buttonTextOne"
+                            xtype="textfield"/>
+                    <link1Url
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="http://"
+                            fieldLabel="Button #1 URL:"
+                            name="./link1Url"
+                            xtype="pathfield"/>
+                    <link1Target
+                            jcr:primaryType="cq:Widget"
+                            checked="{Boolean}true"
+                            fieldLabel="Open in a new Tab?"
+                            inputValue="true"
+                            name="./link1Target"
+                            type="checkbox"
+                            xtype="selection"/>
+                    <buttonClass1
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="Select Button Type"
+                            fieldLabel="Button #1 Type:"
+                            name="./buttonClass1"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <one
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Red"
+                                    value="button-medium-solid-bst-red"/>
+                            <two
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Green"
+                                    value="button-medium-solid-bst-green"/>
+                            <three
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Blue"
+                                    value="button-medium-solid-bst-blue"/>
+                            <four
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Black"
+                                    value="button-medium-solid-bst-black"/>
+                            <five
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Black Outline"
+                                    value="button-medium-transparent-bst-black"/>
+                            <six
+                                    jcr:primaryType="nt:unstructured"
+                                    text="White"
+                                    value="button-medium-solid-bst-white"/>
+                            <seven
+                                    jcr:primaryType="nt:unstructured"
+                                    text="White Outline"
+                                    value="button-medium-transparent-bst-white"/>
+                        </options>
+                    </buttonClass1>
+                    <buttonTextTwo
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Button #2 Label:"
+                            name="./buttonTextTwo"
+                            xtype="textfield"/>
+                    <link2Url
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="http://"
+                            fieldLabel="Button #2 URL:"
+                            name="./link2Url"
+                            xtype="pathfield"/>
+                    <link2Target
+                            jcr:primaryType="cq:Widget"
+                            checked="{Boolean}true"
+                            fieldLabel="Open in a new Tab?"
+                            inputValue="true"
+                            name="./link2Target"
+                            type="checkbox"
+                            xtype="selection"/>
+                    <buttonClass2
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="Select Button Type"
+                            fieldLabel="Button #2 Type:"
+                            name="./buttonClass2"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <one
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Red"
+                                    value="button-medium-solid-bst-red"/>
+                            <two
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Green"
+                                    value="button-medium-solid-bst-green"/>
+                            <three
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Blue"
+                                    value="button-medium-solid-bst-blue"/>
+                            <four
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Black"
+                                    value="button-medium-solid-bst-black"/>
+                            <five
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Black Outline"
+                                    value="button-medium-transparent-bst-black"/>
+                            <six
+                                    jcr:primaryType="nt:unstructured"
+                                    text="White"
+                                    value="button-medium-solid-bst-white"/>
+                            <seven
+                                    jcr:primaryType="nt:unstructured"
+                                    text="White Outline"
+                                    value="button-medium-transparent-bst-white"/>
+                        </options>
+                    </buttonClass2>
+                </items>
+            </tab2>
+        </items>
+    </items>
+</jcr:root>
