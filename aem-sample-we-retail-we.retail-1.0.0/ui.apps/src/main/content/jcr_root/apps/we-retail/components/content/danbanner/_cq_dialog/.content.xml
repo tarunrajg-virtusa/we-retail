@@ -33,7 +33,7 @@
                         name="./linkLabel"/>
                     <imageUrl
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
                         fieldLabel="Image URL"
                         name="./imageUrl"
                         rootPath="/content"
