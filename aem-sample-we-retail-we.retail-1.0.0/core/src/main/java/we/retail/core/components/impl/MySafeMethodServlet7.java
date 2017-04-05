@@ -1,4 +1,4 @@
-package com.adobe.training.core;
+package we.retail.core.components.impl;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
