@@ -32,9 +32,9 @@
     </modules>
 
     <properties>
-        <aem.host>localhost</aem.host>
+        <aem.host>34.205.157.181</aem.host>
         <aem.port>4502</aem.port>
-        <aem.publish.host>localhost</aem.publish.host>
+        <aem.publish.host>34.205.157.181</aem.publish.host>
         <aem.publish.port>4503</aem.publish.port>
         <sling.user>admin</sling.user>
         <sling.password>admin</sling.password>
