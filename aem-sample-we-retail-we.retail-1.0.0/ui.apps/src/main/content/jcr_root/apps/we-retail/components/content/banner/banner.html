@@ -1,10 +1,12 @@
 <div data-sly-use.banner="Banner" data-sly-unwrap>
-    <div style="background-image:url(${banner.backgroundImage @ context='styleToken'});
+    <div style="background-image:url(${banner.imageName @ context='styleToken'});
     background-position: left top;
     background-repeat: no-repeat, repeat;
     padding: 100px;">
-        <h3>${banner.headline}</h3>
-        <p style="display:block;">${banner.body}</p>
-        <button type="button" data-sly-test="${banner.linkLabel}">${banner.linkLabel}</button>
+        <h3>${banner.headLine}</h3>
+        <p style="display:block;">${banner.summaryText}</p>
+        <button type="button" data-sly-test="linkText">${banner.linkType}</button>
+        
+        
     </div>
 </div>
