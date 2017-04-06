@@ -12,7 +12,7 @@ import java.io.IOException;
  * Created by admin on 4/5/2017.
  */
 
-@SlingServlet(paths = "/bin/dhanesh/repo", methods = "GET")
+@SlingServlet(paths = "/bin/dhaneshtest", methods = "GET")
 public class DanSafeMethodServlet extends SlingSafeMethodsServlet {
 
     private static final long serialVersionUID = -3960692666512058118L;
