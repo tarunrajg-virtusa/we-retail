@@ -32,6 +32,10 @@ public class Banner extends WCMUsePojo {
 		pageName = page.getName().toLowerCase();
 	}
 
+	public String getLocale() {
+
+	}
+
 	public String getHeadline() {
 		return properties.get("headline", String.class);
 	}

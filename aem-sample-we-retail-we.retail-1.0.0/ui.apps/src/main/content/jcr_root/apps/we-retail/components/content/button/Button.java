@@ -29,10 +29,21 @@ public class Button extends WCMUsePojo {
         pageManager = super.getPageManager();
         path = page.getPath().toLowerCase();
         pageName = page.getName().toLowerCase();
+
+
+    }
+
+    public String getDestination() {
+        String s =
     }
 
     public String getBackgroundColor() {
+
+
+
         return properties.get("backgroundColor", String.class);
+
+
     }
     public String getLinkTo() {
         return properties.get("http://www.google.com", String.class);
