@@ -1,4 +1,4 @@
-package we.retail.core.listener;
+package we.retail.core;
 
 
         import javax.jcr.Property;
@@ -20,7 +20,7 @@ package we.retail.core.listener;
 @Component
 public class NishilListener implements EventListener {
 
-    private final Logger LOGGER = LoggerFactory.getLogger(TitlePropertyListener.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(NishilListener.class);
 
     @Reference
     private SlingRepository repository;

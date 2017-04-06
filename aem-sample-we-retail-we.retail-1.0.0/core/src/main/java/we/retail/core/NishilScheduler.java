@@ -1,4 +1,4 @@
-package we.retail.core.listener;
+package we.retail.core;
 
 
 
@@ -20,7 +20,7 @@ package we.retail.core.listener;
 @Service(value = Runnable.class)
 @Property(name = "scheduler.expression", value = "*/5 * * * * ?") // Every 5 seconds
 public class NishilScheduler implements Runnable {
-    private static final Logger LOGGER = LoggerFactory.getLogger(CleanupServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(NishilScheduler.class);
 
     @Reference
     private SlingRepository repository;
