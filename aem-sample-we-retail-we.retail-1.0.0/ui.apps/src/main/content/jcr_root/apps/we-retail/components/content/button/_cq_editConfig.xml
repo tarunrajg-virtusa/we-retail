@@ -6,6 +6,6 @@
             jcr:primaryType="cq:DropTargetConfig"
             accept="[*]"
             groups="[page]"
-            propertyName="./link"/>
+            propertyName="./linkTo"/>
     </cq:dropTargets>
 </jcr:root>

@@ -20,14 +20,14 @@
                 <li><a href="#" data-toggle="modal" data-target=".we-LanguageModal" title="${header.currentLanguage.name}"><i class="we-lang-icon we-lang-icon-${header.currentLanguage.countrycode}"></i> ${header.currentLanguage.languagecode}</a></li>
             </ul>
            <ul class="nav navbar-nav navbar-right">
-                <li data-sly-test="${!header.isAnonymous}"><a href="${header.profilePath}.html">Profile</a></li>
-                <li><a href="#"><i class="fa fa-heart-o"></i> Wishlist <span class="badge">0</span></a></li>
-                <li data-sly-test="${!header.isAnonymous}"><a href="${header.messagingPath}.html"><i class="fa fa-envelope-o"></i> Messages <span class="badge">0</span></a></li>
-                <li data-sly-test="${!header.isAnonymous}"><a href="${header.notificationPath}.html"><i class="fa fa-flag-o"></i> Notifications <span class="badge" id="scf-js-notificationsUnreadCount" data-siteurl="/content/we-retail/community/en">0</span></a></li>
-                <li data-sly-resource="${@ resourceType='we-retail/components/structure/navcart'}"></li>
-                <li data-sly-test="${header.isModerator}"><a href="/content/sites/communities/en/moderation.html">Moderation</a></li>
-                <li data-sly-test="${header.isAnonymous}"><a href="#" data-toggle="modal" data-target=".we-SignInModal">Login</a></li>
-                <li data-sly-test="${!header.isAnonymous}"><a href="/system/sling/logout.html?resource=${header.currentPath}.html">Log out</a></li>
+                <li class="we-retail-not-anonymous hidden-header"><a href="${header.profilePath}.html"><img class="avatar-header we-retail-not-anonymous" id="header-avatar" src="" alt="" title="">Profile</a></li>
+                <li class="we-retail-not-anonymous hidden-header"><a href="#"><i class="fa fa-heart-o"></i> Wishlist <span class="badge">0</span></a></li>
+                <li class="we-retail-not-anonymous hidden-header"><a href="${header.messagingPath}.html"><i class="fa fa-envelope-o"></i> Messages <span class="badge">0</span></a></li>
+                <li class="we-retail-not-anonymous hidden-header"><a href="${header.notificationPath}.html"><i class="fa fa-flag-o"></i> Notifications <span class="badge" id="scf-js-notificationsUnreadCount" data-siteurl="/content/we-retail/community/en">0</span></a></li>
+                <li class="we-retail-not-anonymous hidden-header" data-sly-resource="${@ resourceType='we-retail/components/structure/navcart'}"></li>
+                <li class="we-retail-not-anonymous hidden-header" data-sly-test="${header.isModerator}"><a href="/content/we-retail/community/en/moderation.html">Moderation</a></li>
+                <li class="we-retail-anonymous hidden-header"><a href="#" data-toggle="modal" data-target=".we-SignInModal">Login</a></li>
+                <li class="we-retail-not-anonymous hidden-header"><a href="/system/sling/logout.html?resource=${header.currentPath}.html">Log out</a></li>
             </ul>
         </div>
     </div>
@@ -67,12 +67,12 @@
                         </li>
                     </sly>
                      <li class="visible-xs divider" role="separator"></li>
-                    <li class="visible-xs" data-sly-test="${header.isAnonymous}"><a href="#" data-toggle="modal" data-target=".we-SignInModal">Login</a></li>
-            	    <li class="visible-xs" data-sly-test="${!header.isAnonymous}"><a href="/system/sling/logout.html?resource=${header.currentPath}.html">Log out</a></li>
-                    <li class="visible-xs" data-sly-test="${!header.isAnonymous}"><a href="${header.profilePath}.html">Profile</a></li>
-                    <li class="visible-xs" data-sly-test="${!header.isAnonymous}"><a href="${header.messagingPath}.html" class="visible-xs">Messages <span class="badge pull-right">0</span></a></li>
-                    <li class="visible-xs" data-sly-test="${!header.isAnonymous}"><a href="${header.notificationPath}.html" class="visible-xs">Notifications <span class="badge pull-right">0</span></a></li>
-                    <li class="visible-xs"><a href="#" class="visible-xs">Wishlist <span class="badge pull-right">0</span></a></li>
+                    <li class="visible-xs we-retail-anonymous hidden-header"><a href="#" data-toggle="modal" data-target=".we-SignInModal">Login</a></li>
+            	    <li class="visible-xs we-retail-not-anonymous hidden-header"><a href="/system/sling/logout.html?resource=${header.currentPath}.html">Log out</a></li>
+                    <li class="visible-xs we-retail-not-anonymous hidden-header"><a href="${header.profilePath}.html">Profile</a></li>
+                    <li class="visible-xs we-retail-not-anonymous hidden-header"><a href="${header.messagingPath}.html" class="visible-xs">Messages <span class="badge pull-right">0</span></a></li>
+                    <li class="visible-xs we-retail-not-anonymous hidden-header"><a href="${header.notificationPath}.html" class="visible-xs">Notifications <span class="badge pull-right">0</span></a></li>
+                    <li class="visible-xs we-retail-not-anonymous hidden-header"><a href="#" class="visible-xs">Wishlist <span class="badge pull-right">0</span></a></li>
                     <li class="visible-xs"><a href="#" data-toggle="modal" data-target=".we-LanguageModal"><i class="we-lang-icon we-lang-icon-${header.currentLanguage.countrycode}"></i> ${header.currentLanguage.languagecode}</a></li>
                 </ul>
             </div>
@@ -94,18 +94,20 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span><i class="we-Icon we-Icon--search"></i>Search anything</span>
+                    <span><i class="we-Icon we-Icon--search"></i>Search anything really</span>
                     <button type="button" class="close" data-dismiss="modal"><span>Close search</span><i class="we-Icon we-Icon--close-alt"></i></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
-							<form data-paths="[/content/usergenerated/asi/mongo/content/we-retail/community/en]" class="scf-js-searchform navbar-form navbar-left" role="search">
-							    <div class="form-group">
-							        <input type="search" name="input_value" placeholder="Start typing..." class="scf-js-search-value we-SearchModal-input">
+							<form id="form-search-input-inline" data-paths="[/content/usergenerated/asi/mongo/content/we-retail/community/en]" class="scf-js-searchform navbar-form navbar-left" role="search">
+							    <div class="scf-quicksearch-form-group form-group">
+									<input type="search" id="scf-js-quicksearch-input-inline" placeholder="Start typing..." data-dropdown="drop_search" aria-controls="drop_search" aria-expanded="false" name="input_value" class="we-SearchModal-input" value="" required="" autocomplete="off">
 							        <input style="display:none" type="checkbox" class="scf-js-search-jcrtitle" value="jcr:title" checked>
 								    <input style="display:none" type="checkbox" class="scf-js-search-jcrdescription" value="jcr:description" checked>
+									<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
 							        <input type="hidden" name="resultPage" class="scf-js-seach-resultPage" value="/content/we-retail/community/en/search"></input>
+									<input type="hidden" name="searchEndpoint" class="scf-js-search-endpoint" value="/content/we-retail/community/en/search/jcr:content/content/primary/searchresult"></input>
 							    </div>
 							</form>
                         </div>
@@ -134,6 +136,9 @@
                             <button type="submit" class="btn btn-primary btn-action">Login</button>
                         </div>
                         <div class="form-group">
+                            <a href="/content/we-retail/community/en/signin.html" class=""><img src="/etc/designs/we-retail/images/social/socialnetworks.png" alt="Social Login" width="150"></a>
+                        </div>
+                        <div class="form-group">
                             <a href="#" class="">Forgot your password?</a>
                         </div>
                         <input type="hidden" name="resource" value="${header.currentPath}.html"/>
@@ -160,9 +165,18 @@
                     <h3 class="modal-title text-center">CHOOSE YOUR COUNTRY</h3>
                 </div>
                 <div class="modal-body">
-                    <ul class="we-LanguagesList" data-sly-list.country="${header.countries}">
+                    <ul class="we-LanguagesList">
                         <li>
-                            <i class="we-lang-icon we-lang-icon-${country.countrycode}"></i><span data-sly-list.language="${country.languages}"><a href="${language.path}.html" class="${language.selected ? 'active' : ''}">${language.name}</a><sly data-sly-test="${!languageList.last}"> | </sly></span>
+                            <i class="we-lang-icon we-lang-icon-us"></i><span><a href="/content/we-retail/us/en.html" class="${language.selected ? 'active' : ''}">English</a></span>
+                        </li>
+                        <li>
+                            <i class="we-lang-icon we-lang-icon-fr"></i><span><a href="/content/we-retail/community/fr/forum.html" class="${language.selected ? 'active' : ''}">French</a></span>
+                        </li>
+                        <li>
+                            <i class="we-lang-icon we-lang-icon-de"></i><span><a href="/content/we-retail/community/de/forum.html" class="${language.selected ? 'active' : ''}">German</a></span>
+                        </li>
+                        <li>
+                            <i class="we-lang-icon we-lang-icon-jp"></i><span><a href="/content/we-retail/community/jp/forum.html" class="${language.selected ? 'active' : ''}">Japanese</a></span>
                         </li>
                     </ul>
                 </div>
@@ -172,4 +186,5 @@
             </div>
         </div>
     </div><!-- /.we-LanguageModal -->
+
 </sly>
